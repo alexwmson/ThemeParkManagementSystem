@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36401.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeParkManagementSystem.Operations", "ThemeParkManagementSystem.Operations\ThemeParkManagementSystem.Operations.csproj", "{19CD7E35-7441-446A-BE53-4E8DAA1D3640}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeParkManagementSystem.Entities", "ThemeParkManagementSystem.Entities\ThemeParkManagementSystem.Entities.csproj", "{AA020372-02AC-48BE-8D65-6669A90A812C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeParkManagementSystem.Services", "ThemeParkManagementSystem.Services\ThemeParkManagementSystem.Services.csproj", "{2EAD5E0C-E0AC-44EF-98BD-40BC8B4E86B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19CD7E35-7441-446A-BE53-4E8DAA1D3640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19CD7E35-7441-446A-BE53-4E8DAA1D3640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19CD7E35-7441-446A-BE53-4E8DAA1D3640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19CD7E35-7441-446A-BE53-4E8DAA1D3640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA020372-02AC-48BE-8D65-6669A90A812C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA020372-02AC-48BE-8D65-6669A90A812C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA020372-02AC-48BE-8D65-6669A90A812C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA020372-02AC-48BE-8D65-6669A90A812C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EAD5E0C-E0AC-44EF-98BD-40BC8B4E86B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EAD5E0C-E0AC-44EF-98BD-40BC8B4E86B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EAD5E0C-E0AC-44EF-98BD-40BC8B4E86B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EAD5E0C-E0AC-44EF-98BD-40BC8B4E86B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B9802CC-BA04-4BA8-BBBF-1AA94C3BB3EC}
+	EndGlobalSection
+EndGlobal
