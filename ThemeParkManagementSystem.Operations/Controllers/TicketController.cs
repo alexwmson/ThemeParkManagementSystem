@@ -1,83 +1,122 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System;
 using Microsoft.AspNetCore.Mvc;
+using ThemeParkManagementSystem.Entities;
+using ThemeParkManagementSystem.Services;
 
 namespace ThemeParkManagementSystem.Operations.Controllers
 {
     public class TicketController : Controller
     {
-        // GET: TicketController
-        public ActionResult Index()
+        private readonly ITicketServices _ticketServices;
+
+        public TicketController(ITicketServices ticketServices)
         {
-            return View();
+            _ticketServices = ticketServices;
         }
 
-        // GET: TicketController/Details/5
-        public ActionResult Details(int id)
+        // GET: /Ticket
+        public IActionResult Index()
         {
-            return View();
+            var tickets = _ticketServices.GetTickets();
+            return View(tickets);
         }
 
-        // GET: TicketController/Create
-        public ActionResult Create()
+        // GET: /Ticket/Details/5
+        public IActionResult Details(int id)
         {
-            return View();
+            var ticket = _ticketServices.GetTicket(id);
+            if (ticket == null)
+            {
+                return NotFound();
+            }
+
+            return View(ticket);
         }
 
-        // POST: TicketController/Create
+        // GET: /Ticket/Create
+        public IActionResult Create()
+        {
+            var model = new Ticket
+            {
+                DatePurchased = DateTime.Now,
+                ValidOn = DateTime.Today
+            };
+
+            return View(model);
+        }
+
+        // POST: /Ticket/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public IActionResult Create(Ticket ticket)
         {
-            try
+            if (!ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                return View(ticket);
             }
-            catch
-            {
-                return View();
-            }
+
+            _ticketServices.AddTicket(ticket);
+            return RedirectToAction(nameof(Index));
         }
 
-        // GET: TicketController/Edit/5
-        public ActionResult Edit(int id)
+        // GET: /Ticket/Edit/5
+        public IActionResult Edit(int id)
         {
-            return View();
+            var ticket = _ticketServices.GetTicket(id);
+            if (ticket == null)
+            {
+                return NotFound();
+            }
+
+            return View(ticket);
         }
 
-        // POST: TicketController/Edit/5
+        // POST: /Ticket/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public IActionResult Edit(int id, Ticket ticket)
         {
-            try
+            if (id != ticket.Id)
             {
-                return RedirectToAction(nameof(Index));
+                return BadRequest();
             }
-            catch
+
+            if (!ModelState.IsValid)
             {
-                return View();
+                return View(ticket);
             }
+
+            _ticketServices.UpdateTicket(ticket);
+            return RedirectToAction(nameof(Index));
         }
 
-        // GET: TicketController/Delete/5
-        public ActionResult Delete(int id)
+        // GET: /Ticket/Delete/5
+        public IActionResult Delete(int id)
         {
-            return View();
+            var ticket = _ticketServices.GetTicket(id);
+            if (ticket == null)
+            {
+                return NotFound();
+            }
+
+            return View(ticket);
         }
 
-        // POST: TicketController/Delete/5
-        [HttpPost]
+        // POST: /Ticket/Delete/5
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public IActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            _ticketServices.RemoveTicket(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        // GET: /Ticket/FilterByType?type=Adult
+        public IActionResult FilterByType(TicketTypes type)
+        {
+            var tickets = _ticketServices.GetTypeTickets(type);
+            ViewBag.SelectedType = type;
+            return View(tickets);
         }
     }
 }

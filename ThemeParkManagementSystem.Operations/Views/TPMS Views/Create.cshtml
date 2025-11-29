@@ -1,5 +1,49 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model ThemeParkManagementSystem.Entities.Ticket
+@using ThemeParkManagementSystem.Entities
+@using Microsoft.AspNetCore.Mvc.Rendering
+
 @{
+    ViewData["Title"] = "Create Ticket";
+    var ticketTypeItems = Enum.GetValues(typeof(TicketTypes))
+        .Cast<TicketTypes>()
+        .Select(t => new SelectListItem { Text = t.ToString(), Value = t.ToString() });
 }
+
+<h1>Create Ticket</h1>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Type" class="form-label"></label>
+        <select asp-for="Type" class="form-select" asp-items="ticketTypeItems"></select>
+        <span asp-validation-for="Type" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ValidOn" class="form-label"></label>
+        <input asp-for="ValidOn" class="form-control" type="date" />
+        <span asp-validation-for="ValidOn" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DatePurchased" class="form-label"></label>
+        <input asp-for="DatePurchased" class="form-control" type="datetime-local" />
+        <span asp-validation-for="DatePurchased" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</form>

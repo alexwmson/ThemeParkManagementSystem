@@ -1,5 +1,70 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<ThemeParkManagementSystem.Entities.Ticket>
+@using ThemeParkManagementSystem.Entities
+@using Microsoft.AspNetCore.Mvc.Rendering
+
 @{
+    ViewData["Title"] = "Tickets By Type";
+
+    var selectedType = ViewBag.SelectedType != null
+        ? (TicketTypes)ViewBag.SelectedType
+        : TicketTypes.Adult;
+
+    var ticketTypeItems = Enum.GetValues(typeof(TicketTypes))
+        .Cast<TicketTypes>()
+        .Select(t => new SelectListItem
+        {
+            Text = t.ToString(),
+            Value = t.ToString(),
+            Selected = t == selectedType
+        });
+}
+
+<h1>Tickets By Type</h1>
+
+<form asp-action="FilterByType" method="get" class="row g-3 mb-3">
+    <div class="col-auto">
+        <label for="type" class="form-label">Ticket Type</label>
+        <select id="type" name="type" class="form-select" asp-items="ticketTypeItems"></select>
+    </div>
+    <div class="col-auto align-self-end">
+        <button type="submit" class="btn btn-primary">Filter</button>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>
+
+@if (!Model.Any())
+{
+    <p>No tickets found for the selected type.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Valid On</th>
+                <th>Date Purchased</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Type</td>
+                    <td>@item.Price.ToString("C")</td>
+                    <td>@item.ValidOn.ToShortDateString()</td>
+                    <td>@item.DatePurchased</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Details</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }

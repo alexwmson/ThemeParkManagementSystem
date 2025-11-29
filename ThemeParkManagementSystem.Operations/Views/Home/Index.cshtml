@@ -1,8 +1,56 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Theme Park Management";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container py-4">
+    <div class="text-center mb-4">
+        <h1 class="display-4">Theme Park Management System</h1>
+        <p class="lead">
+            Use the shortcuts below to manage tickets and explore the system.
+        </p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">View All Tickets</h5>
+                    <p class="card-text">
+                        Browse all tickets currently in the system.
+                    </p>
+                    <a asp-controller="Ticket" asp-action="Index" class="btn btn-primary mt-auto">
+                        Go to Tickets
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Create Ticket</h5>
+                    <p class="card-text">
+                        Add a new ticket for a guest, including type and visit date.
+                    </p>
+                    <a asp-controller="Ticket" asp-action="Create" class="btn btn-success mt-auto">
+                        Create Ticket
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Filter Tickets by Type</h5>
+                    <p class="card-text">
+                        Quickly find tickets such as VIP, SeasonPass, or Child passes.
+                    </p>
+                    <a asp-controller="Ticket" asp-action="FilterByType" class="btn btn-info mt-auto">
+                        Filter Tickets
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

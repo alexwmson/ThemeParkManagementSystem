@@ -1,7 +1,17 @@
+using ThemeParkManagementSystem.Services.DataContext;
+using Microsoft.EntityFrameworkCore;
+using ThemeParkManagementSystem.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddScoped<ITicketServices, TicketSQLRepository>();
+
 builder.Services.AddControllersWithViews();
+
+// DbContext
+builder.Services.AddDbContext<TPMSDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 var app = builder.Build();
 
