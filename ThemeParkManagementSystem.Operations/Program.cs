@@ -4,14 +4,11 @@ using ThemeParkManagementSystem.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<ITicketServices, TicketSQLRepository>();
-
-builder.Services.AddControllersWithViews();
-
-// DbContext
 builder.Services.AddDbContext<TPMSDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<ITicketServices, TicketSQLRepository>();
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
