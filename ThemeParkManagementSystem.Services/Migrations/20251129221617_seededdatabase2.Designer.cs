@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ThemeParkManagementSystem.Services.DataContext;
 
@@ -10,9 +11,11 @@ using ThemeParkManagementSystem.Services.DataContext;
 namespace ThemeParkManagementSystem.Services.Migrations
 {
     [DbContext(typeof(TPMSDbContext))]
-    partial class TPMSDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251129221617_seededdatabase2")]
+    partial class seededdatabase2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.11");
@@ -123,7 +126,7 @@ namespace ThemeParkManagementSystem.Services.Migrations
                         {
                             Id = 1,
                             DatePurchased = new DateTime(2025, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Alice Johnson",
+                            Name = "Adult Day Pass",
                             Price = 59.99f,
                             Type = 0,
                             ValidOn = new DateTime(2025, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -131,8 +134,8 @@ namespace ThemeParkManagementSystem.Services.Migrations
                         new
                         {
                             Id = 2,
-                            DatePurchased = new DateTime(2025, 12, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Bobby Smith",
+                            DatePurchased = new DateTime(2025, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Child Day Pass",
                             Price = 39.99f,
                             Type = 1,
                             ValidOn = new DateTime(2025, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -141,7 +144,7 @@ namespace ThemeParkManagementSystem.Services.Migrations
                         {
                             Id = 3,
                             DatePurchased = new DateTime(2025, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Caroline Park",
+                            Name = "VIP Access",
                             Price = 149.99f,
                             Type = 3,
                             ValidOn = new DateTime(2026, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -150,7 +153,7 @@ namespace ThemeParkManagementSystem.Services.Migrations
                         {
                             Id = 4,
                             DatePurchased = new DateTime(2025, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "David Nguyen",
+                            Name = "Season Pass",
                             Price = 299.99f,
                             Type = 4,
                             ValidOn = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -159,7 +162,7 @@ namespace ThemeParkManagementSystem.Services.Migrations
                         {
                             Id = 5,
                             DatePurchased = new DateTime(2025, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Emily Carter",
+                            Name = "Fast Pass",
                             Price = 29.99f,
                             Type = 5,
                             ValidOn = new DateTime(2025, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified)

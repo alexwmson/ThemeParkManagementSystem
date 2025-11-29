@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ThemeParkManagementSystem.Entities.Ride>
+@using ThemeParkManagementSystem.Entities
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+@{
+    ViewData["Title"] = "Rides By Type";
+}
+
+<h1>Rides By Type</h1>
+
+<form asp-action="FilterByWaitTime" method="get" class="row g-3 mb-3">
+    <div class="col-auto">
+        <label for="waittime" class="form-label">Max Wait Time (minutes)</label>
+        <input id="waittime" name="waittime" type="number" class="form-control" min="0" />
+    </div>
+    <div class="col-auto align-self-end">
+        <button type="submit" class="btn btn-primary">Filter</button>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>
+
+@if (!Model.Any())
+{
+    <p>No rides found for the selected type.</p>
+}
+else
+{
+    <p># of Rides found where wait time is at most ViewData.WaitTime minutes: @Model.Count()</p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Capacity</th>
+                <th>Wait Time</th>
+                <th>Next Maintenance</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Capacity.ToString()</td>
+                    <td>@item.WaitTime.ToString()</td>
+                    <td>@item.NextMaintenance.ToString()</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Details</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -53,4 +53,47 @@
             </div>
         </div>
     </div>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">View All Rides</h5>
+                    <p class="card-text">
+                        Browse all rides currently in the system.
+                    </p>
+                    <a asp-controller="Ride" asp-action="Index" class="btn btn-primary mt-auto">
+                        Go to Rides
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Create Ride</h5>
+                    <p class="card-text">
+                        Add a new ride.
+                    </p>
+                    <a asp-controller="Ride" asp-action="Create" class="btn btn-success mt-auto">
+                        Create Ride
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Filter Rides by Wait Time</h5>
+                    <p class="card-text">
+                        Quickly find rides below a certain wait time.
+                    </p>
+                    <a asp-controller="Ride" asp-action="FilterByWaitTime" class="btn btn-info mt-auto">
+                        Filter Rides
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

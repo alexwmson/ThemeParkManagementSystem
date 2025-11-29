@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ThemeParkManagementSystem.Services.DataContext;
 
@@ -10,9 +11,11 @@ using ThemeParkManagementSystem.Services.DataContext;
 namespace ThemeParkManagementSystem.Services.Migrations
 {
     [DbContext(typeof(TPMSDbContext))]
-    partial class TPMSDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251129221407_seededdatabase")]
+    partial class seededdatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.11");
@@ -49,46 +52,46 @@ namespace ThemeParkManagementSystem.Services.Migrations
                         {
                             Id = 1,
                             Capacity = 24,
-                            Description = "High-speed roller coaster",
-                            Name = "Dragon Coaster",
-                            NextMaintenance = new DateTime(2026, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "High-speed outdoor roller coaster with sharp turns.",
+                            Name = "Thunder Mountain Coaster",
+                            NextMaintenance = new DateTime(2025, 12, 9, 17, 14, 7, 284, DateTimeKind.Local).AddTicks(1325),
                             WaitTime = 45
                         },
                         new
                         {
                             Id = 2,
                             Capacity = 20,
-                            Description = "Log flume ride with drops",
-                            Name = "Splash Mountain",
-                            NextMaintenance = new DateTime(2026, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Family water ride through a pirate-themed river.",
+                            Name = "Pirate Splash Adventure",
+                            NextMaintenance = new DateTime(2025, 12, 4, 17, 14, 7, 285, DateTimeKind.Local).AddTicks(5165),
                             WaitTime = 30
                         },
                         new
                         {
                             Id = 3,
-                            Capacity = 40,
-                            Description = "Giant ferris wheel with views",
-                            Name = "Sky Wheel",
-                            NextMaintenance = new DateTime(2026, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            WaitTime = 15
+                            Capacity = 16,
+                            Description = "Spinning space-themed ride with LED lighting.",
+                            Name = "Galaxy Spinner",
+                            NextMaintenance = new DateTime(2025, 12, 14, 17, 14, 7, 285, DateTimeKind.Local).AddTicks(5176),
+                            WaitTime = 20
                         },
                         new
                         {
                             Id = 4,
-                            Capacity = 16,
-                            Description = "Dark ride with animatronics",
-                            Name = "Haunted Mansion",
-                            NextMaintenance = new DateTime(2026, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            WaitTime = 25
+                            Capacity = 12,
+                            Description = "Dark indoor ride with animatronics and jump scares.",
+                            Name = "Haunted Mansion Escape",
+                            NextMaintenance = new DateTime(2025, 12, 6, 17, 14, 7, 285, DateTimeKind.Local).AddTicks(5178),
+                            WaitTime = 60
                         },
                         new
                         {
                             Id = 5,
-                            Capacity = 12,
-                            Description = "Vertical launch thrill ride",
-                            Name = "Rocket Launch",
-                            NextMaintenance = new DateTime(2026, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            WaitTime = 60
+                            Capacity = 8,
+                            Description = "200-foot freefall tower drop ride.",
+                            Name = "Sky Tower Drop",
+                            NextMaintenance = new DateTime(2025, 12, 19, 17, 14, 7, 285, DateTimeKind.Local).AddTicks(5179),
+                            WaitTime = 50
                         });
                 });
 
@@ -122,47 +125,47 @@ namespace ThemeParkManagementSystem.Services.Migrations
                         new
                         {
                             Id = 1,
-                            DatePurchased = new DateTime(2025, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Alice Johnson",
-                            Price = 59.99f,
+                            DatePurchased = new DateTime(2025, 11, 29, 17, 14, 7, 285, DateTimeKind.Local).AddTicks(9400),
+                            Name = "Adult Day Pass",
+                            Price = 89.99f,
                             Type = 0,
-                            ValidOn = new DateTime(2025, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            ValidOn = new DateTime(2025, 11, 29, 0, 0, 0, 0, DateTimeKind.Local)
                         },
                         new
                         {
                             Id = 2,
-                            DatePurchased = new DateTime(2025, 12, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Bobby Smith",
-                            Price = 39.99f,
+                            DatePurchased = new DateTime(2025, 11, 29, 16, 59, 7, 285, DateTimeKind.Local).AddTicks(9516),
+                            Name = "Child Day Pass",
+                            Price = 59.99f,
                             Type = 1,
-                            ValidOn = new DateTime(2025, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            ValidOn = new DateTime(2025, 11, 29, 0, 0, 0, 0, DateTimeKind.Local)
                         },
                         new
                         {
                             Id = 3,
-                            DatePurchased = new DateTime(2025, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Caroline Park",
-                            Price = 149.99f,
+                            DatePurchased = new DateTime(2025, 11, 29, 16, 14, 7, 285, DateTimeKind.Local).AddTicks(9524),
+                            Name = "VIP All-Access Ticket",
+                            Price = 199.99f,
                             Type = 3,
-                            ValidOn = new DateTime(2026, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            ValidOn = new DateTime(2025, 11, 29, 0, 0, 0, 0, DateTimeKind.Local)
                         },
                         new
                         {
                             Id = 4,
-                            DatePurchased = new DateTime(2025, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "David Nguyen",
-                            Price = 299.99f,
-                            Type = 4,
-                            ValidOn = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            DatePurchased = new DateTime(2025, 11, 29, 16, 29, 7, 285, DateTimeKind.Local).AddTicks(9530),
+                            Name = "FastPass Upgrade",
+                            Price = 49.99f,
+                            Type = 5,
+                            ValidOn = new DateTime(2025, 11, 29, 0, 0, 0, 0, DateTimeKind.Local)
                         },
                         new
                         {
                             Id = 5,
-                            DatePurchased = new DateTime(2025, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Emily Carter",
-                            Price = 29.99f,
-                            Type = 5,
-                            ValidOn = new DateTime(2025, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            DatePurchased = new DateTime(2025, 11, 19, 17, 14, 7, 285, DateTimeKind.Local).AddTicks(9542),
+                            Name = "Season Pass",
+                            Price = 299.99f,
+                            Type = 4,
+                            ValidOn = new DateTime(2026, 2, 28, 0, 0, 0, 0, DateTimeKind.Local)
                         });
                 });
 #pragma warning restore 612, 618
