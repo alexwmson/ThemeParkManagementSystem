@@ -5,9 +5,9 @@ namespace ThemeParkManagementSystem.Services.DataContext
 {
     public class TPMSDbContext : DbContext
     {
-        public TPMSDbContext(DbContextOptions<TPMSDbContext> option) : base(option)
+        public TPMSDbContext(DbContextOptions<TPMSDbContext> options)
+            : base(options)
         {
-
         }
 
         public DbSet<Ticket> Tickets { get; set; }
