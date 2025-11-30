@@ -11,6 +11,21 @@ namespace ThemeParkManagementSystem.Entities
         SeasonPass,
         FastPass
     }
+
+    public static class TicketPricing
+    {
+        public static Dictionary<TicketTypes, float> TicketPrices() =>
+            new Dictionary<TicketTypes, float>
+            {
+                { TicketTypes.Adult, 59.99f },
+                { TicketTypes.Child, 39.99f },
+                { TicketTypes.Senior, 49.99f },
+                { TicketTypes.VIP, 149.99f },
+                { TicketTypes.SeasonPass, 299.99f },
+                { TicketTypes.FastPass, 89.99f }
+            };
+    }
+
     public class Ticket
     {
         [Key]

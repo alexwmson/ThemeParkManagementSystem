@@ -55,6 +55,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
                 return View(ticket);
             }
 
+            ticket.Price = TicketPricing.TicketPrices()[ticket.Type];
             _ticketServices.AddTicket(ticket);
             return RedirectToAction(nameof(Index));
         }
@@ -86,6 +87,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
                 return View(ticket);
             }
 
+            ticket.Price = TicketPricing.TicketPrices()[ticket.Type];
             _ticketServices.UpdateTicket(ticket);
             return RedirectToAction(nameof(Index));
         }

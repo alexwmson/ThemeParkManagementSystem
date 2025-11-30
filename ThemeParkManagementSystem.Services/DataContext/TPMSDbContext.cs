@@ -22,29 +22,29 @@ namespace ThemeParkManagementSystem.Services.DataContext
                 new Ticket { Id = 2, Name = "Bobby Smith", Type = TicketTypes.Child, Price = 39.99f, ValidOn = new DateTime(2025, 12, 10), DatePurchased = new DateTime(2025, 12, 06) },
                 new Ticket { Id = 3, Name = "Caroline Park", Type = TicketTypes.VIP, Price = 149.99f, ValidOn = new DateTime(2026, 01, 15), DatePurchased = new DateTime(2025, 12, 20) },
                 new Ticket { Id = 4, Name = "David Nguyen", Type = TicketTypes.SeasonPass, Price = 299.99f, ValidOn = new DateTime(2026, 01, 01), DatePurchased = new DateTime(2025, 12, 03) },
-                new Ticket { Id = 5, Name = "Emily Carter", Type = TicketTypes.FastPass, Price = 29.99f, ValidOn = new DateTime(2025, 12, 18), DatePurchased = new DateTime(2025, 12, 18) },
+                new Ticket { Id = 5, Name = "Emily Carter", Type = TicketTypes.FastPass, Price = 89.99f, ValidOn = new DateTime(2025, 12, 18), DatePurchased = new DateTime(2025, 12, 18) },
 
                 new Ticket { Id = 6, Name = "Franklin West", Type = TicketTypes.Adult, Price = 59.99f, ValidOn = new DateTime(2025, 12, 19), DatePurchased = new DateTime(2025, 12, 19) },
                 new Ticket { Id = 7, Name = "Grace Howard", Type = TicketTypes.VIP, Price = 149.99f, ValidOn = new DateTime(2025, 12, 20), DatePurchased = new DateTime(2025, 12, 19) },
                 new Ticket { Id = 8, Name = "Henry Lopez", Type = TicketTypes.Child, Price = 39.99f, ValidOn = new DateTime(2025, 12, 22), DatePurchased = new DateTime(2025, 12, 21) },
-                new Ticket { Id = 9, Name = "Isabella Turner", Type = TicketTypes.FastPass, Price = 29.99f, ValidOn = new DateTime(2025, 12, 22), DatePurchased = new DateTime(2025, 12, 22) },
+                new Ticket { Id = 9, Name = "Isabella Turner", Type = TicketTypes.FastPass, Price = 89.99f, ValidOn = new DateTime(2025, 12, 22), DatePurchased = new DateTime(2025, 12, 22) },
                 new Ticket { Id = 10, Name = "Jacob Hill", Type = TicketTypes.Adult, Price = 59.99f, ValidOn = new DateTime(2025, 12, 23), DatePurchased = new DateTime(2025, 12, 23) },
 
                 new Ticket { Id = 11, Name = "Kelly Green", Type = TicketTypes.Senior, Price = 49.99f, ValidOn = new DateTime(2025, 12, 24), DatePurchased = new DateTime(2025, 12, 24) },
                 new Ticket { Id = 12, Name = "Liam Roberts", Type = TicketTypes.Adult, Price = 59.99f, ValidOn = new DateTime(2025, 12, 25), DatePurchased = new DateTime(2025, 12, 25) },
                 new Ticket { Id = 13, Name = "Mia Douglas", Type = TicketTypes.VIP, Price = 149.99f, ValidOn = new DateTime(2026, 01, 03), DatePurchased = new DateTime(2025, 12, 26) },
                 new Ticket { Id = 14, Name = "Noah Carter", Type = TicketTypes.Child, Price = 39.99f, ValidOn = new DateTime(2025, 12, 26), DatePurchased = new DateTime(2025, 12, 26) },
-                new Ticket { Id = 15, Name = "Olivia Brooks", Type = TicketTypes.FastPass, Price = 29.99f, ValidOn = new DateTime(2026, 01, 05), DatePurchased = new DateTime(2025, 12, 27) },
+                new Ticket { Id = 15, Name = "Olivia Brooks", Type = TicketTypes.FastPass, Price = 89.99f, ValidOn = new DateTime(2026, 01, 05), DatePurchased = new DateTime(2025, 12, 27) },
 
                 new Ticket { Id = 16, Name = "Peter Winston", Type = TicketTypes.Adult, Price = 59.99f, ValidOn = new DateTime(2026, 01, 06), DatePurchased = new DateTime(2025, 12, 28) },
                 new Ticket { Id = 17, Name = "Quinn Adams", Type = TicketTypes.Senior, Price = 49.99f, ValidOn = new DateTime(2026, 01, 07), DatePurchased = new DateTime(2025, 12, 29) },
                 new Ticket { Id = 18, Name = "Rebecca Miles", Type = TicketTypes.VIP, Price = 149.99f, ValidOn = new DateTime(2026, 01, 08), DatePurchased = new DateTime(2025, 12, 30) },
                 new Ticket { Id = 19, Name = "Samuel Pratt", Type = TicketTypes.Child, Price = 39.99f, ValidOn = new DateTime(2026, 01, 09), DatePurchased = new DateTime(2025, 12, 30) },
-                new Ticket { Id = 20, Name = "Tiffany Rhodes", Type = TicketTypes.FastPass, Price = 29.99f, ValidOn = new DateTime(2026, 01, 10), DatePurchased = new DateTime(2025, 12, 31) },
+                new Ticket { Id = 20, Name = "Tiffany Rhodes", Type = TicketTypes.FastPass, Price = 89.99f, ValidOn = new DateTime(2026, 01, 10), DatePurchased = new DateTime(2025, 12, 31) },
 
                 new Ticket { Id = 21, Name = "Franklin Moore", Type = TicketTypes.Adult, Price = 59.99f, ValidOn = new DateTime(2025, 12, 01), DatePurchased = new DateTime(2025, 12, 01) },
                 new Ticket { Id = 22, Name = "Georgia Alvarez", Type = TicketTypes.Child, Price = 39.99f, ValidOn = new DateTime(2025, 12, 01), DatePurchased = new DateTime(2025, 12, 01) },
-                new Ticket { Id = 23, Name = "Henry Thompson", Type = TicketTypes.FastPass, Price = 29.99f, ValidOn = new DateTime(2025, 12, 01), DatePurchased = new DateTime(2025, 12, 01) }
+                new Ticket { Id = 23, Name = "Henry Thompson", Type = TicketTypes.FastPass, Price = 89.99f, ValidOn = new DateTime(2025, 12, 01), DatePurchased = new DateTime(2025, 12, 01) }
             );
 
             modelBuilder.Entity<Ride>().HasData(
