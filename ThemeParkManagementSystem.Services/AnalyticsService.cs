@@ -2,18 +2,32 @@
 
 namespace ThemeParkManagementSystem.Services
 {
-    // Service class providing analytics functionalities in the Theme Park Management System
+    /// <summary>
+    /// AnalyticsService
+    /// Author: Javier / Alex
+    /// Date: 2025-11-30
+    /// Description: Implements analytics calculations for visitors, revenue, and ride wait times
+
     public class AnalyticsService : IAnalyticsService
     {
         private readonly ITicketServices _ticketService;
         private readonly IRideServices _rideService;
 
+        // Initializes a new instance of the AnalyticsService class with the specified ticket and ride services
         public AnalyticsService(ITicketServices ticketService, IRideServices rideService)
         {
             _ticketService = ticketService;
             _rideService = rideService;
         }
 
+        /// <summary>
+        /// Calculates visitor counts, ticket revenue, and ride wait-time statistics
+        /// (mean, median, mode, min, max) for the current day, month, and year,
+        /// and returns the results in an AnalyticsViewModel.
+        
+        /// An AnalyticsViewModel containing visitor, revenue, and
+        /// wait-time analytics for the current day, month, and year.
+        /// </summary>
         public AnalyticsViewModel GetTodayMonthYearAnalytics()
         {
             var analytics = new AnalyticsViewModel();

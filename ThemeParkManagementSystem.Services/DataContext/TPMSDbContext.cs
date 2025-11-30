@@ -3,8 +3,13 @@ using ThemeParkManagementSystem.Entities;
 
 namespace ThemeParkManagementSystem.Services.DataContext
 {
-    // Database context for the Theme Park Management System, managing Tickets and Rides entities
-
+    /// <summary>
+    /// TPMSDbContext
+    /// Author: Alex / Javier
+    /// Date: 2025-11-30
+    /// Description: Entity Framework Core database context for the Theme Park Management System.
+    /// Manages Ticket and Ride entities and seeds initial sample data for analytics and testing.
+    /// </summary>
     public class TPMSDbContext : DbContext
     {
         public TPMSDbContext(DbContextOptions<TPMSDbContext> options)

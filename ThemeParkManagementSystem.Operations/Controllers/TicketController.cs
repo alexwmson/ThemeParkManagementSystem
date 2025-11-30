@@ -5,26 +5,33 @@ using ThemeParkManagementSystem.Services;
 
 namespace ThemeParkManagementSystem.Operations.Controllers
 {
-    
-    // Controller for managing tickets and ticket views in the Theme Park Management System
+    /// <summary>
+    /// TicketController
+    /// Author: Javier / Alex
+    /// Date: 2025-11-30
+    /// Description: Handles all ticket-related HTTP requests (list, details, create, edit, delete, filter by type)
+    /// in the Theme Park Management System presentation layer.
+    /// </summary>
 
     public class TicketController : Controller
     {
+        // Service used for ticket operations
         private readonly ITicketServices _ticketServices;
 
+        // Initializes a new instance of the TicketController class
         public TicketController(ITicketServices ticketServices)
         {
             _ticketServices = ticketServices;
         }
 
-        // GET: /Ticket
+        // Displays a list of all tickets
         public IActionResult Index()
         {
             var tickets = _ticketServices.GetTickets();
             return View(tickets);
         }
 
-        // GET: /Ticket/Details/5
+        // Displays details of a specific ticket by ID
         public IActionResult Details(int id)
         {
             var ticket = _ticketServices.GetTicket(id);
@@ -36,7 +43,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
             return View(ticket);
         }
 
-        // GET: /Ticket/Create
+        // Displays the create ticket form
         public IActionResult Create()
         {
             var model = new Ticket
@@ -48,7 +55,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
             return View(model);
         }
 
-        // POST: /Ticket/Create
+        // Handles the submission of the create ticket form
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Ticket ticket)
@@ -63,7 +70,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: /Ticket/Edit/5
+        // Displays the edit ticket form
         public IActionResult Edit(int id)
         {
             var ticket = _ticketServices.GetTicket(id);
@@ -75,7 +82,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
             return View(ticket);
         }
 
-        // POST: /Ticket/Edit/5
+        // Handles the submission of the edit ticket form
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, Ticket ticket)
@@ -95,7 +102,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: /Ticket/Delete/5
+        // Displays the delete ticket confirmation page
         public IActionResult Delete(int id)
         {
             var ticket = _ticketServices.GetTicket(id);
@@ -107,7 +114,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
             return View(ticket);
         }
 
-        // POST: /Ticket/Delete/5
+        // Handles the deletion of a ticket
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
@@ -116,7 +123,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: /Ticket/FilterByType?type=Adult
+        // Filters tickets by type and displays the filtered list
         public IActionResult FilterByType(TicketTypes type)
         {
             var tickets = _ticketServices.GetTypeTickets(type);

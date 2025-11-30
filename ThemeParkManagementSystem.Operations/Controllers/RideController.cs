@@ -5,25 +5,32 @@ using ThemeParkManagementSystem.Services;
 
 namespace ThemeParkManagementSystem.Operations.Controllers
 {
-    //Controller for managing rides and ride views in the Theme Park Management System
-
+    /// <summary>
+    /// TicketController
+    /// Author: Alex
+    /// Date: 2025-11-30
+    /// Description: Handles all ride-related HTTP requests (list, details, create, edit, delete, filter by wait time)
+    /// in the Theme Park Management System presentation layer.
+    /// </summary>
     public class RideController : Controller
     {
+        // Service used for ride operations
         private readonly IRideServices _rideServices;
 
+        // Initializes a new instance of the RideController class
         public RideController(IRideServices rideServices)
         {
             _rideServices = rideServices;
         }
 
-        // GET: /Ride
+        // Displays a list of all rides
         public IActionResult Index()
         {
             var rides = _rideServices.GetRides();
             return View(rides);
         }
 
-        // GET: /Ride/Details/5
+        // Displays details of a specific ride by ID
         public IActionResult Details(int id)
         {
             var ride = _rideServices.GetRide(id);
@@ -35,7 +42,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
             return View(ride);
         }
 
-        // GET: /Ride/Create
+        // Displays the create ride form
         public IActionResult Create()
         {
             var model = new Ride
@@ -46,7 +53,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
             return View(model);
         }
 
-        // POST: /Ride/Create
+        // Handles the submission of the create ride form
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Ride ride)
@@ -60,7 +67,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: /Ride/Edit/5
+        // Displays the edit ride form for a specific ride by ID
         public IActionResult Edit(int id)
         {
             var ride = _rideServices.GetRide(id);
@@ -72,7 +79,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
             return View(ride);
         }
 
-        // POST: /Ride/Edit/5
+        // Handles the submission of the edit ride form
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, Ride ride)
@@ -91,7 +98,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: /Ride/Delete/5
+        // Displays the delete confirmation page for a specific ride by ID
         public IActionResult Delete(int id)
         {
             var ride = _rideServices.GetRide(id);
@@ -103,7 +110,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
             return View(ride);
         }
 
-        // POST: /Ride/Delete/5
+        // Handles the deletion of a specific ride by ID
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
@@ -112,7 +119,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: /Ride/FilterByWaitTime?waittime=30
+        // Filters rides by wait time and displays the results
         public IActionResult FilterByWaitTime(int waittime)
         {
             var rides = _rideServices.GetRidesByWaitTime(waittime);
