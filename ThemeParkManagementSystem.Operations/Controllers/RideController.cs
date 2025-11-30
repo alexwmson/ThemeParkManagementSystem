@@ -120,10 +120,10 @@ namespace ThemeParkManagementSystem.Operations.Controllers
         }
 
         // Filters rides by wait time and displays the results
-        public IActionResult FilterByWaitTime(int waittime)
+        public IActionResult FilterByWaitTime(int waitTime)
         {
-            var rides = _rideServices.GetRidesByWaitTime(waittime);
-            ViewBag.WaitTime = waittime;
+            var rides = _rideServices.GetRidesByWaitTime(waitTime);
+            ViewBag.WaitTime = waitTime;
             return View(rides);
         }
     }
