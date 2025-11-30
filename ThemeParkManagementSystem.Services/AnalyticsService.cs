@@ -2,6 +2,7 @@
 
 namespace ThemeParkManagementSystem.Services
 {
+    // Service class providing analytics functionalities in the Theme Park Management System
     public class AnalyticsService : IAnalyticsService
     {
         private readonly ITicketServices _ticketService;
