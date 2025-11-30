@@ -9,6 +9,8 @@ builder.Services.AddDbContext<TPMSDbContext>(options =>
 
 builder.Services.AddScoped<ITicketServices, TicketSQLRepository>();
 builder.Services.AddScoped<IRideServices, RideSQLRepository>();
+builder.Services.AddScoped<IAnalyticsService, AnalyticsService>();
+
 
 builder.Services.AddControllersWithViews();
 
