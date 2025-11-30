@@ -47,12 +47,13 @@ namespace ThemeParkManagementSystem.Services
 
         public int GetWaitTime(int id)
         {
-            return context.Rides.FirstOrDefault(s => s.Id == id).WaitTime;
+            var ride = context.Rides.FirstOrDefault(r => r.Id == id);
+            return ride?.WaitTime ?? 0;
         }
 
-        public List<Ride> GetRidesByWaitTime(int waittime)
+        public List<Ride> GetRidesByWaitTime(int waitTime)
         {
-            return context.Rides.Where(s => s.WaitTime <= waittime).ToList();
+            return context.Rides.Where(s => s.WaitTime <= waitTime).ToList();
         }
     }
 }
