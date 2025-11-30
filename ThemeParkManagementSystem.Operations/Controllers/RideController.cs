@@ -5,6 +5,8 @@ using ThemeParkManagementSystem.Services;
 
 namespace ThemeParkManagementSystem.Operations.Controllers
 {
+    //Controller for managing rides and ride views in the Theme Park Management System
+
     public class RideController : Controller
     {
         private readonly IRideServices _rideServices;

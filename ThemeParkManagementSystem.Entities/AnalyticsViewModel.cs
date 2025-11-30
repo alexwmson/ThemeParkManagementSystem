@@ -1,5 +1,7 @@
 ﻿namespace ThemeParkManagementSystem.Entities
 {
+    // ViewModel for analytics data in the Theme Park Management System
+
     public class AnalyticsViewModel
     {
         public int TotalVisitorsToday { get; set; }

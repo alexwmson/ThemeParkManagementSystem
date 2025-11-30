@@ -3,6 +3,8 @@ using ThemeParkManagementSystem.Entities;
 
 namespace ThemeParkManagementSystem.Services.DataContext
 {
+    // Database context for the Theme Park Management System, managing Tickets and Rides entities
+
     public class TPMSDbContext : DbContext
     {
         public TPMSDbContext(DbContextOptions<TPMSDbContext> options)

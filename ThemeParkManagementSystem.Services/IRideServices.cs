@@ -2,6 +2,8 @@
 
 namespace ThemeParkManagementSystem.Services
 {
+    // Interface defining ride-related services in the Theme Park Management System
+
     public interface IRideServices
     {
         List<Ride> GetRides();

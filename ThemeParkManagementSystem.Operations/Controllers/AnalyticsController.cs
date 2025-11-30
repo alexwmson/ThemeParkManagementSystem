@@ -4,6 +4,8 @@ using ThemeParkManagementSystem.Services;
 
 namespace ThemeParkManagementSystem.Operations.Controllers
 {
+    // Controller that handles analytics related to tickets and rides in the Theme Park Management System
+
     public class AnalyticsController : Controller
     {
         private readonly ITicketServices ticketService;

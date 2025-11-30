@@ -3,6 +3,8 @@ using ThemeParkManagementSystem.Services.DataContext;
 
 namespace ThemeParkManagementSystem.Services
 {
+    // Repository class implementing ticket-related services using SQL database in the Theme Park Management System
+
     public class TicketSQLRepository : ITicketServices
     {
         private readonly TPMSDbContext context;

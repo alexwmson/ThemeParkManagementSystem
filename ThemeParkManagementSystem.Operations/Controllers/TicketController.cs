@@ -5,6 +5,9 @@ using ThemeParkManagementSystem.Services;
 
 namespace ThemeParkManagementSystem.Operations.Controllers
 {
+    
+    // Controller for managing tickets and ticket views in the Theme Park Management System
+
     public class TicketController : Controller
     {
         private readonly ITicketServices _ticketServices;

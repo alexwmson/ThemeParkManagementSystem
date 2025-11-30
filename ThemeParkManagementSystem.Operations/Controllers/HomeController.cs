@@ -4,6 +4,8 @@ using ThemeParkManagementSystem.Operations.Models;
 
 namespace ThemeParkManagementSystem.Operations.Controllers
 {
+    // Controller for handling home page and error views in the Theme Park Management System
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

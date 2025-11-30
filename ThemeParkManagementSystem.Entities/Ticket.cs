@@ -2,6 +2,8 @@
 
 namespace ThemeParkManagementSystem.Entities
 {
+    // Entity representing a Ticket in the Theme Park Management System
+
     public enum TicketTypes
     {
         Adult,

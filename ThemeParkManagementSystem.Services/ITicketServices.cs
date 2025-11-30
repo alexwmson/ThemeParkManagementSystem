@@ -2,6 +2,8 @@
 
 namespace ThemeParkManagementSystem.Services
 {
+    // Interface defining ticket-related services in the Theme Park Management System
+
     public interface ITicketServices
     {
         List<Ticket> GetTickets();

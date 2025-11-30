@@ -2,6 +2,8 @@
 
 namespace ThemeParkManagementSystem.Entities
 {
+    // Entity representing a Ride in the Theme Park Management System
+
     public class Ride
     {
         [Required]
