@@ -12,18 +12,22 @@ namespace ThemeParkManagementSystem.Services.DataContext
     /// </summary>
     public class TPMSDbContext : DbContext
     {
+        // Initializes a new instance of the TPMSDbContext class with the specified options
         public TPMSDbContext(DbContextOptions<TPMSDbContext> options)
             : base(options)
         {
         }
 
+        // DbSets for Ticket and Ride entities
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Ride> Rides { get; set; }
 
+        // Seeds initial data for Tickets and Rides
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
+            // Seed sample Ticket data
             modelBuilder.Entity<Ticket>().HasData(
                 new Ticket { Id = 1, Name = "Alice Johnson", Type = TicketTypes.Adult, Price = 59.99f, ValidOn = new DateTime(2025, 12, 10), DatePurchased = new DateTime(2025, 12, 05) },
                 new Ticket { Id = 2, Name = "Bobby Smith", Type = TicketTypes.Child, Price = 39.99f, ValidOn = new DateTime(2025, 12, 10), DatePurchased = new DateTime(2025, 12, 06) },
@@ -54,6 +58,7 @@ namespace ThemeParkManagementSystem.Services.DataContext
                 new Ticket { Id = 23, Name = "Henry Thompson", Type = TicketTypes.FastPass, Price = 89.99f, ValidOn = new DateTime(2025, 12, 01), DatePurchased = new DateTime(2025, 12, 01) }
             );
 
+            // Seed sample Ride data
             modelBuilder.Entity<Ride>().HasData(
                 new Ride { Id = 1, Name = "Dragon Coaster", Description = "High-speed roller coaster", Capacity = 24, WaitTime = 45, NextMaintenance = new DateTime(2026, 01, 10) },
                 new Ride { Id = 2, Name = "Splash Mountain", Description = "Log flume ride with drops", Capacity = 20, WaitTime = 30, NextMaintenance = new DateTime(2026, 02, 05) },
