@@ -7,7 +7,7 @@ namespace ThemeParkManagementSystem.Operations.Controllers
 {
     /// <summary>
     /// TicketController
-    /// Author: Javier / Alex
+    /// Author: Javier
     /// Date: 2025-11-30
     /// Description: Handles all ticket-related HTTP requests (list, details, create, edit, delete, filter by type)
     /// in the Theme Park Management System presentation layer.

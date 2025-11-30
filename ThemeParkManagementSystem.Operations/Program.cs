@@ -4,9 +4,11 @@ using ThemeParkManagementSystem.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configures Entity Framework Core with SQLite
 builder.Services.AddDbContext<TPMSDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("SqlConn")));
 
+// Register application services for dependency injection
 builder.Services.AddScoped<ITicketServices, TicketSQLRepository>();
 builder.Services.AddScoped<IRideServices, RideSQLRepository>();
 builder.Services.AddScoped<IAnalyticsService, AnalyticsService>();
