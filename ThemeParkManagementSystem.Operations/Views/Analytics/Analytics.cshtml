@@ -1,0 +1,131 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model AnalyticsViewModel
+
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">Theme Park Analytics Dashboard</h1>
+    <div class="row mb-4">
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Visitors Today</h5>
+                    <p class="display-6">@Model.TotalVisitorsToday</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Visitors This Month</h5>
+                    <p class="display-6">@Model.TotalVisitorsThisMonth</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Visitors This Year</h5>
+                    <p class="display-6">@Model.TotalVisitorsThisYear</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mb-4">
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Revenue Today</h5>
+                    <p class="display-6">$@Model.TotalRevenueToday</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Revenue This Month</h5>
+                    <p class="display-6">$@Model.TotalRevenueThisMonth</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Revenue This Year</h5>
+                    <p class="display-6">$@Model.TotalRevenueThisYear</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 class="mt-5 mb-3">Ride Wait Time Statistics</h2>
+
+    <div class="row mb-4">
+
+        <div class="col-md-3">
+            <div class="card text-center shadow-sm p-3">
+                <h6>Mean Wait Time</h6>
+                <p class="fs-4">@Model.MeanWaitTime min</p>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center shadow-sm p-3">
+                <h6>Median Wait Time</h6>
+                <p class="fs-4">@Model.MedianWaitTime min</p>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center shadow-sm p-3">
+                <h6>Mode Wait Time</h6>
+                <p class="fs-4">@Model.ModeWaitTime min</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mb-5">
+
+        <div class="col-md-6">
+            <div class="card shadow-sm p-3">
+                <h5 class="text-center">Shortest Wait Time Ride</h5>
+                @if (Model.MinWaitTime != null)
+                {
+                    <table class="table table-bordered mt-3">
+                        <tr><th>Name</th><td>@Model.MinWaitTime.Name</td></tr>
+                        <tr><th>Wait Time</th><td>@Model.MinWaitTime.WaitTime min</td></tr>
+                        <tr><th>Capacity</th><td>@Model.MinWaitTime.Capacity</td></tr>
+                    </table>
+                }
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm p-3">
+                <h5 class="text-center">Longest Wait Time Ride</h5>
+                @if (Model.MaxWaitTime != null)
+                {
+                    <table class="table table-bordered mt-3">
+                        <tr><th>Name</th><td>@Model.MaxWaitTime.Name</td></tr>
+                        <tr><th>Wait Time</th><td>@Model.MaxWaitTime.WaitTime min</td></tr>
+                        <tr><th>Capacity</th><td>@Model.MaxWaitTime.Capacity</td></tr>
+                    </table>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>
