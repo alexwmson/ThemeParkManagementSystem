@@ -14,16 +14,16 @@
     <div class="card-body">
         <h5 class="card-title">@Model.Name</h5>
         <dl class="row">
-            <dt class="col-sm-3">Type</dt>
+            <dt class="col-sm-3">Description</dt>
             <dd class="col-sm-9">@Model.Description</dd>
 
-            <dt class="col-sm-3">Price</dt>
-            <dd class="col-sm-9">@Model.Capacity.ToString("C")</dd>
+            <dt class="col-sm-3">Capacity</dt>
+            <dd class="col-sm-9">@Model.Capacity</dd>
 
-            <dt class="col-sm-3">Valid On</dt>
+            <dt class="col-sm-3">Wait Time</dt>
             <dd class="col-sm-9">@Model.WaitTime</dd>
 
-            <dt class="col-sm-3">Date Purchased</dt>
+            <dt class="col-sm-3">Next Maintenance</dt>
             <dd class="col-sm-9">@Model.NextMaintenance.ToString()</dd>
         </dl>
     </div>
