@@ -363,3 +363,6 @@ MigrationBackup/
 FodyWeavers.xsd
 /ThemeParkManagementSystem.Operations/Data
 /.gitignore
+
+*.db-shm
+*.db-wal
