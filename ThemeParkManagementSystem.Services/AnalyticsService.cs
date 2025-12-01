@@ -42,9 +42,16 @@ namespace ThemeParkManagementSystem.Services
             analytics.TotalVisitorsThisMonth = tickets.Count(x => x.DatePurchased.Month == month && x.DatePurchased.Year == year);
             analytics.TotalVisitorsThisYear = tickets.Count(x => x.DatePurchased.Year == year);
 
-            analytics.TotalRevenueToday = tickets.Where(x => x.DatePurchased.Date == day).Sum(x => x.Price);
-            analytics.TotalRevenueThisMonth = tickets.Where(x => x.DatePurchased.Month == month && x.DatePurchased.Year == year).Sum(x => x.Price);
-            analytics.TotalRevenueThisYear = tickets.Where(x => x.DatePurchased.Year == year).Sum(x => x.Price);
+            analytics.TotalRevenueToday = (float)Math.Round(
+                tickets.Where(x => x.DatePurchased.Date == day).Sum(x => x.Price), 2);
+
+            analytics.TotalRevenueThisMonth = (float)Math.Round(
+                tickets.Where(x => x.DatePurchased.Month == month && x.DatePurchased.Year == year)
+                       .Sum(x => x.Price), 2);
+
+            analytics.TotalRevenueThisYear = (float)Math.Round(
+                tickets.Where(x => x.DatePurchased.Year == year)
+                       .Sum(x => x.Price), 2);
 
             List<int> waittimes = rides.Select(r => r.WaitTime).ToList();
 
